@@ -1,6 +1,12 @@
-CFLAGS = -Wall -g
+CFLAGS =-Wall -g
+SRC_FILES=$(wildcard code/*.c)
+SRC=$(basename $(SRC_FILES))
+OBJECT= $(SRC:code/%=%)
 
-all: ex1 ex3 ex7 ex8
+all: $(OBJECT)
+
+$(OBJECT): %: code/%.c
+	cc $(CFLAGS) -o $@ $<
 
 clean:
-	rm -f ex1 ex3 ex7
+	-rm $(SRC:code/%=%) || true
