@@ -5,7 +5,7 @@
 void test_debug()
 {
 	//notice you don't need the \n
-	debug("Ihave Brown Hair.");
+	debug("I have Brown Hair.");
 
 	//passing in arguments like printf
 	debug("I am %d years old.", 37);
